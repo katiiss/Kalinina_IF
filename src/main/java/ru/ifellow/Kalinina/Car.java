@@ -1,5 +1,10 @@
 package ru.ifellow.Kalinina;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter
+@AllArgsConstructor
 public abstract class Car {
     private String brand;
     private String yearOfRelease;
@@ -8,19 +13,6 @@ public abstract class Car {
     private String driveType;
     private String bodyType;
     private String color;
-
-    public Car(String brand,String yearOfRelease,String vin,int horsepower,String driveType,String bodyType,String color){
-        this.brand=brand;
-        this.yearOfRelease=yearOfRelease;
-        this.vin=vin;
-        this.horsepower=horsepower;
-        this.driveType=driveType;
-        this.bodyType=bodyType;
-        this.color=color;
-    }
-
-    protected Car() {
-    }
 
     public void changeColor(String newColor){
         this.color=newColor;
@@ -42,33 +34,5 @@ public abstract class Car {
         System.out.println("Марка: " + brand);
         System.out.println("VIN код: " + vin);
         System.out.println();
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public String getYearOfRelease() {
-        return yearOfRelease;
-    }
-
-    public String getVin() {
-        return vin;
-    }
-
-    public int getHorsepower() {
-        return horsepower;
-    }
-
-    public String getDriveType() {
-        return driveType;
-    }
-
-    public String getBodyType() {
-        return bodyType;
-    }
-
-    public String getColor() {
-        return color;
     }
 }

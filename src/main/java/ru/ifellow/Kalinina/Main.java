@@ -8,16 +8,16 @@ public class Main {
     public static void main(String[] args) {
         List<Car> cars = new ArrayList<>();
 
-        cars.add(new Audi("Audi", "2001", "WAUZZZ8K9MA123456", 249, "полный", "седан", "черный"));
-        cars.add(new BMW("BMW", "2018", "WBA8E9C58J7890123", 184, "задний", "внедорожник", "белый"));
-        cars.add(new Lexus("Lexus", "2022", "JTJBC1BAXH2123456", 311, "полный", "седан", "синий"));
-        cars.add(new Nissan("Nissan", "2005", "JN1CA21D8MT654321", 126, "передний", "хэтчбек", "зеленый"));
-        cars.add(new Opel("Opel", "2019", "W0L0TGF4XF1234567", 115, "передний", "универсал", "красный"));
-        cars.add(new Audi("Audi", "2003", "WAUZZZ4G6FN234567", 190, "полный", "купе", "серебристый"));
-        cars.add(new BMW("BMW", "2023", "WBACN61060L345678", 340, "полный", "седан", "черный"));
-        cars.add(new Lexus("Lexus", "2008", "JTJHY7AX7H4567890", 256, "задний", "внедорожник", "зеленый"));
-        cars.add(new Nissan("Nissan", "2000", "JN1AZ4EH3CM567890", 140, "передний", "седан", "серый"));
-        cars.add(new Opel("Opel", "2021", "W0L0T8EP5M6789012", 130, "передний", "хэтчбек", "белый"));
+        cars.add(new Audi("2001", "WAUZZZ8K9MA123456", 249, "полный", "седан", "черный"));
+        cars.add(new BMW("2018", "WBA8E9C58J7890123", 184, "задний", "внедорожник", "белый"));
+        cars.add(new Lexus("2022", "JTJBC1BAXH2123456", 311, "полный", "седан", "синий"));
+        cars.add(new Nissan("2005", "JN1CA21D8MT654321", 126, "передний", "хэтчбек", "зеленый"));
+        cars.add(new Opel("2019", "W0L0TGF4XF1234567", 115, "передний", "универсал", "красный"));
+        cars.add(new Audi("2003", "WAUZZZ4G6FN234567", 190, "полный", "купе", "серебристый"));
+        cars.add(new BMW("2023", "WBACN61060L345678", 340, "полный", "седан", "черный"));
+        cars.add(new Lexus("2008", "JTJHY7AX7H4567890", 256, "задний", "внедорожник", "зеленый"));
+        cars.add(new Nissan("2000", "JN1AZ4EH3CM567890", 140, "передний", "седан", "серый"));
+        cars.add(new Opel("2021", "W0L0T8EP5M6789012", 130, "передний", "хэтчбек", "белый"));
 
         System.out.println("---Автомобили после 2006 года---");
         printCarsAfter2006(cars);
