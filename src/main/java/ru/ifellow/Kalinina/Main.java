@@ -20,20 +20,20 @@ public class Main {
         cars.add(new Opel("2021", "W0L0T8EP5M6789012", 130, "передний", "хэтчбек", "белый"));
 
         System.out.println("---Автомобили после 2006 года---");
-        printCarsAfter2006(cars);
+        printCarsAfterYear(cars,2006);
 
         System.out.println("---Изменение зеленого цвета на красный---");
-        changeGreenToRed(cars);
+        changeColors(cars,"зеленый","красный");
 
         System.out.println("---Автомобили с типом кузова: внедорожник---");
-        printCarsJeep(cars);
+        printCarsBodyType(cars,"внедорожник");
     }
 
-    public static void printCarsAfter2006(List<Car> cars) {
+    public static void printCarsAfterYear(List<Car> cars, int years) {
         for (Car car : cars) {
             try {
                 int year = Integer.parseInt(car.getYearOfRelease());
-                if (year > 2006) {
+                if (year > years) {
                     car.informationAboutTheCar();
                 }
                 else {
@@ -47,27 +47,29 @@ public class Main {
         }
     }
 
-    public static void changeGreenToRed(List<Car> cars) {
+    public static void changeColors(List<Car> cars, String lastColor, String newColor) {
         for (Car car : cars){
-            if ("зеленый".equalsIgnoreCase(car.getColor())) {
+            if (lastColor.equalsIgnoreCase(car.getColor())) {
                 System.out.println("До изменения цвета:");
                 car.informationAboutTheCar();
-                car.changeColor("красный");
+                car.changeColor(newColor);
                 System.out.println("После изменения цвета:");
                 car.informationAboutTheCar();
             }
         }
     }
 
-    public static void printCarsJeep(List<Car> cars) {
+    public static void printCarsBodyType(List<Car> cars,String bodyType) {
         for (Car car : cars){
-            if ("внедорожник".equalsIgnoreCase(car.getBodyType())) {
+            if (bodyType.equalsIgnoreCase(car.getBodyType())) {
                 System.out.println();
-                System.out.println("На этом автомобиле можно ездить по грязи, снегу, песку ");
+                if ("внедорожник".equals(bodyType))
+                    System.out.println("На этом автомобиле можно ездить по грязи, снегу, песку ");
                 car.informationBrandAndVin();
             }
             else {
-                System.out.println("Для рыбалки/охоты лучше выбрать внедорожник");
+                if ("внедорожник".equals(bodyType))
+                    System.out.println("Для рыбалки/охоты лучше выбрать внедорожник");
             }
         }
     }
