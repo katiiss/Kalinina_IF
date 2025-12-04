@@ -1,10 +1,12 @@
 package ru.ifellow.Kalinina;
 
+import ru.ifellow.Kalinina.modelsCar.Car;
+import ru.ifellow.Kalinina.modelsCar.model.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-    //it's ru.ifellow.Kalinina.Main origin
     public static void main(String[] args) {
         List<Car> cars = new ArrayList<>();
 
@@ -20,13 +22,13 @@ public class Main {
         cars.add(new Opel("2021", "W0L0T8EP5M6789012", 130, "передний", "хэтчбек", "белый"));
 
         System.out.println("---Автомобили после 2006 года---");
-        printCarsAfterYear(cars,2006);
+        printCarsAfterYear(cars, 2006);
 
         System.out.println("---Изменение зеленого цвета на красный---");
-        changeColors(cars,"зеленый","красный");
+        changeColors(cars, "зеленый", "красный");
 
         System.out.println("---Автомобили с типом кузова: внедорожник---");
-        printCarsBodyType(cars,"внедорожник");
+        printCarsBodyType(cars, "внедорожник");
     }
 
     public static void printCarsAfterYear(List<Car> cars, int years) {
@@ -35,20 +37,19 @@ public class Main {
                 int year = Integer.parseInt(car.getYearOfRelease());
                 if (year > years) {
                     car.informationAboutTheCar();
-                }
-                else {
+                } else {
                     System.out.print("Устаревший авто - ");
                     car.informationBrandAndVin();
                 }
             } catch (NumberFormatException e) {
-                System.out.println("Ошибка в формате года у автомобиля " + car.getBrand()+ " "+car.getVin());
+                System.out.println("Ошибка в формате года у автомобиля " + car.getBrand() + " " + car.getVin());
                 System.out.println();
             }
         }
     }
 
     public static void changeColors(List<Car> cars, String lastColor, String newColor) {
-        for (Car car : cars){
+        for (Car car : cars) {
             if (lastColor.equalsIgnoreCase(car.getColor())) {
                 System.out.println("До изменения цвета:");
                 car.informationAboutTheCar();
@@ -59,15 +60,14 @@ public class Main {
         }
     }
 
-    public static void printCarsBodyType(List<Car> cars,String bodyType) {
-        for (Car car : cars){
+    public static void printCarsBodyType(List<Car> cars, String bodyType) {
+        for (Car car : cars) {
             if (bodyType.equalsIgnoreCase(car.getBodyType())) {
                 System.out.println();
                 if ("внедорожник".equals(bodyType))
                     System.out.println("На этом автомобиле можно ездить по грязи, снегу, песку ");
                 car.informationBrandAndVin();
-            }
-            else {
+            } else {
                 if ("внедорожник".equals(bodyType))
                     System.out.println("Для рыбалки/охоты лучше выбрать внедорожник");
             }
